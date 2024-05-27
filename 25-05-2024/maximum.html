@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximum Number Finder</title>
+</head>
+<body>
+
+<script>
+    function findMaximumNumber(num1, num2, num3) {
+        // Using Math.max() to find the maximum number among the three
+        return Math.max(num1, num2, num3);
+    }
+
+    let number1 = prompt("Enter first number:");
+    let number2 = prompt("Enter second number:");
+    let number3 = prompt("Enter third number:");
+
+    let maximumNumber = findMaximumNumber(Number(number1), Number(number2), Number(number3));
+    console.log("The maximum number is:", maximumNumber);
+</script>
+
+</body>
+</html>

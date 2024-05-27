@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+   <body>
+
+
+    <script>
+  function checkDigitCount(number) {
+        const absNumber = Math.abs(number); 
+
+        if (absNumber < 10) {
+            return "The number is one-digit.";
+        } else if (absNumber < 100) {
+            return "The number is two-digit.";
+        } else if (absNumber < 1000) { 
+            return "The number is three-digit.";
+        } else {
+            return "The number is more than three-digit.";
+        }
+    }
+let number=prompt("Enter a Number")
+console.log(checkDigitCount(number));
+    </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Type Checker</title>
+</head>
+<body>
+
+<script>
+    function checkCharacterType(char) {
+        // Check if the character is a digit
+        if (/[0-9]/.test(char)) {
+            return "The given character is a digit.";
+        }
+        // Check if the character is an uppercase letter
+        else if (/[A-Z]/.test(char)) {
+            return "The given character is an uppercase letter.";
+        }
+        // Check if the character is a lowercase letter
+        else if (/[a-z]/.test(char)) {
+            return "The given character is a lowercase letter.";
+        }
+        // If not a digit, uppercase letter, or lowercase letter, it's a special character
+        else {
+            return "The given character is a special character.";
+        }
+    }
+
+    let character = prompt("Enter a character:");
+    console.log(checkCharacterType(character));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Formation Checker</title>
+</head>
+<body>
+
+<script>
+    function canFormTriangle(a, b, c) {
+        // Check if the sum of any two sides is greater than the third side
+        return (a + b > c) && (a + c > b) && (b + c > a);
+    }
+
+    let side1 = prompt("Enter the length of the first side (a):");
+    let side2 = prompt("Enter the length of the second side (b):");
+    let side3 = prompt("Enter the length of the third side (c):");
+
+    // Convert inputs to numbers implicitly by using them in arithmetic operations
+    if (canFormTriangle(+side1, +side2, +side3)) {
+        console.log("The given sides can form a triangle.");
+    } else {
+        console.log("The given sides cannot form a triangle.");
+    }
+</script>
+
+</body>
+</html>

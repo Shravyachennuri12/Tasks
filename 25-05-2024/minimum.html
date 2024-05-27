@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimum Number Finder</title>
+</head>
+<body>
+
+<script>
+    function findMinimumNumber(num1, num2, num3) {
+        // Using Math.min() to find the minimum number among the three
+        return Math.min(num1, num2, num3);
+    }
+
+    let number1 = prompt("Enter first number:");
+    let number2 = prompt("Enter second number:");
+    let number3 = prompt("Enter third number:");
+
+    let minimumNumber = findMinimumNumber(Number(number1), Number(number2), Number(number3));
+    console.log("The minimum number is:", minimumNumber);
+</script>
+
+</body>
+</html>
