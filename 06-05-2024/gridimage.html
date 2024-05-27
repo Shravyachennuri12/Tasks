@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: auto;
+            align-items: auto;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        
+        .container {
+            max-width: 1600px;
+            width: 100%;
+            padding: 0 20px;
+        }
+        
+        .gallery {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            grid-auto-rows: auto; /* Let rows adjust to content height */
+            justify-items: center; /* Align grid items horizontally to the center */
+            align-items: center; /* Align grid items vertically to the center */
+        }
+        
+        .col {
+            display: flex;
+            flex-direction: row; /* Change to row to display images line-wise */
+            justify-content: space-between; /* Distribute space between images */
+            align-items: center;
+            flex-wrap: wrap; /* Allow images to wrap to the next line */
+        }
+
+        .col img {
+            min-width: none;
+            max-width: 100%;
+            margin-bottom: 20px;
+            border: 2px solid #fff; /* Add a border around each image */
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="gallery">
+            <h1>Image Gallery</h1>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="food1..jpg" alt="">
+                <img src="food2.jpg" alt="">
+                <img src="food3.jpg" alt="">
+                <img src="food4.jpg" alt="">
+            </div>
+            <div class="col">
+                <img src="food5.jpg" alt="">
+                <img src="food6.jpg" alt="">
+                <img src="food7.jpg" alt="">
+                <img src="food8.jpg" alt="">
+            </div>
+            <div class="col">
+                <img src="food9.jpg" alt="">
+                <img src="food10.jpg" alt="">
+                <img src="food11.jpeg" alt="">
+                <img src="food12.jpg" alt="">
+            </div>
+            <div class="col">
+                <img src="food13.jpeg" alt="">
+                <img src="food14.webp" alt="">
+                <img src="food15.webp" alt="">
+                <img src="food16.jpeg" alt="">
+            </div>
+            <div class="col">
+                <img src="food17.jpeg" alt="">
+                <img src="food18.jpeg" alt="">
+                <img src="food19.jpeg" alt="">
+                <img src="food20.jpeg" alt="">
+            </div>
+            <div class="col">
+                <img src="food21.jpeg" alt="">
+                <img src="food22.jpeg" alt="">
+                <img src="food23.jpeg" alt="">
+                <img src="food24.jpeg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

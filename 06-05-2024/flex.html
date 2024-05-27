@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            height:100vh;
+          }
+        .container{
+            margin:20px;
+         }
+         .row{
+            width: 100%;
+            display:flex;
+            justify-content:center;
+            flex-wrap: wrap;
+         }
+
+         .card-01{
+            background: #03D29F;
+            position: relative;
+            flex: 1;
+            max-width: 300px; 
+            height: 150px;
+            margin:10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+         }
+        .card-02{
+            background: #50A7FF;
+            position: relative;
+            flex: 1;
+            max-width: 460px;
+            height: 200px;
+            margin:10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+        .card-03{
+            background: #FF7675;
+            position: relative;
+            flex: 1;
+            max-width: 940px;
+            height: 300px;
+            margin:10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="card-01"></div>
+            <div class="card-01"></div>
+            <div class="card-01"></div>
+        </div>
+        <div class="row">
+            <div class="card-02"></div>
+            <div class="card-02"></div>
+        </div>
+        <div class="row">
+            <div class="card-03"></div>
+        </div>
+    </div> 
+</body>
+</html>
