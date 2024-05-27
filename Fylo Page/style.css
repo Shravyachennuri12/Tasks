@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Danfo:ELSH@0..100&family=Open+Sans:ital,wght@0,700;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth@0,91.5;1,91.5&display=swap');
+body {
+  font-size: 14px;
+}
+
+.header-container {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+ul {
+  margin: 30px;
+}
+.header-part-container {
+  background-color: hsl(217, 28%, 15%);
+  height: 20vh;
+  display: flex;
+  justify-content: space-between;
+}
+.intro-image {
+  height: 400px;
+}
+.nav-links {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+}
+.nav-bar-container {
+  display: flex;
+  justify-content: center;
+}
+.logo {
+  height: 35px;
+}
+.intro-container {
+  text-align: center;
+  padding: 20px;
+}
+.intro-container > h4 {
+  line-height: 35px;
+  margin-top: 30px;
+}
+.intro-container > p {
+  line-height: 30px;
+  margin-top: 25px;
+}
+#btn {
+  border: none;
+  background-color: hsl(176, 68%, 64%);
+  width: 210px;
+  padding: 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  color: hsl(0, 0%, 100%);
+}
+.main-container {
+  background-color: hsl(217, 28%, 15%);
+  /* background-color:  hsl(218, 28%, 13%); */
+  color: hsl(0, 0%, 100%);
+  /* background-image: url("./images/bg-curvy-desktop.svg"); */
+  /* background-size: contain;*/
+  background-repeat: no-repeat; 
+ /* font-family: Open-sans, sans-serif;*/
+}
+/* my addition of css */
+.margin-bottom {
+  margin-bottom: 150px;
+}
+.middle-container {
+  width: 1000px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 450px);
+  column-gap: 100px;
+  row-gap: 50px; 
+  margin: auto;
+}
+.middle-container img {
+  height: 100px;
+  margin-bottom: 25px;
+}
+.image-and-content {
+  width: 1300px;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 100px;
+}
+.badged {
+  margin-left: 4px;
+  background-color: aqua;
+  border-radius: 50%;
+  width: 13px;
+  color: white;
+}
+.text-info {
+  text-decoration: none;
+  padding: 5px 0px;
+  border-bottom: 2px solid aqua;
+}
+.image-and-content h3 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+.cards {
+  width: 70%;
+  padding: 20px;
+  margin: auto;
+  background-image: url("./images/bg-quotes.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+  margin-bottom: 100px;
+}
+.testimonials {
+  background-color: hsl(219, 30%, 18%);
+  width: 31%;
+  font-size: 14px;
+  padding: 25px;
+}
+.testimonial-grid img {
+  height: 40px;
+  border-radius: 50%;
+  grid-row: span 2;
+}
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 40px auto;
+  grid-template-rows: 20px;
+  column-gap: 10px;
+}
+.floating-card {
+  width: 60%;
+  margin: auto;
+  background-color: hsl(217, 28%, 15%);
+  padding: 25px;
+  text-align: center;
+  box-shadow: 2px 3px 5px black;
+  position: relative;
+  top: 100px;
+}
+.floating-card p {
+  padding: 15px;
+}
+.w-74 {
+  border-radius: 50px;
+  width: 70%;
+}
+input + a {
+  text-decoration: none;
+  background-color: hsl(176, 68%, 64%);
+  padding: 10px 20px;
+  color: hsl(0, 0%, 100%);
+  border-radius: 50px;
+  margin-left: 15px;
+}
+input + a:hover {
+  color: white;
+}
+
+.footer-container {
+  width: 100%;
+  height: 500px;
+  padding-top: 160px;
+  padding-left: 80px;
+  background-color: hsl(216, 53%, 9%);
+  color: hsl(0, 0%, 100%);
+  padding-right: 50px;
+}
+.location img {
+  height: 20px;
+  padding-top: 6px;
+}
+.location {
+  display: flex;
+  gap: 10px;
+}
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+}
+.anchor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.anchor-list a {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+}
+.social-media-links img{
+  height: 20px;
+  color: white;
+  /* padding-right: 30px; */
+  margin: 5px;
+  background-color:#f4f4f4 ;
+}
