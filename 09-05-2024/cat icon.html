@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cat Animation Website</title>
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.section {
+  padding: 50px 0;
+  text-align: center;
+}
+
+/* Cat Icon Styles */
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+/* Cat Icon Styles */
+.cat {
+  width: 100px;
+  height: 100px;
+  background-image: url('cat.png'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: transform 0.5s ease; /* Smooth transition */
+}
+
+.cat:hover {
+  transform: translateX(200px); /* Move cat 200px to the right */
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+@keyframes moveCat {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% - 100px); /* Move cat to the right end */
+  }
+}
+
+.cat:hover {
+  animation: moveCat 2s forwards; /* Apply animation on hover */
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Cat Animation Website</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="section">
+    <div class="container">
+      <div class="cat-container">
+        <div class="cat" id="cat"></div>
+      </div>
+      <p>Hover over the cat to see it move!</p>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>We are a website dedicated to cat lovers. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="container">
+      <h2>Our Services</h2>
+      <ul>
+        <li>Cat grooming</li>
+        <li>Behavior training</li>
+        <li>Healthcare consultation</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>If you have any questions or inquiries, feel free to reach out to us:</p>
+      <p>Email: info@catanimationwebsite.com</p>
+      <p>Phone: 123-456-7890</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Cat Animation Website. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
