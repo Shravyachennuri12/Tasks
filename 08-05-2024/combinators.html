@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinator Example</title>
+    <style>
+        /* Styles applied to <p> elements that are descendants of <div> elements */
+div p {
+    color: blue;
+}
+
+/* Styles applied to <p> elements that are direct children of <div> elements */
+div > p {
+    font-weight: bold;
+}
+
+/* Styles applied to <p> elements that are immediately preceded by <h2> elements */
+h2 + p {
+    font-style: italic;
+}
+
+/* Styles applied to <p> elements that are siblings of <h2> elements */
+h2 ~ p {
+    background-color: lightgray;
+}
+
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Title</h2>
+        <p>This is a paragraph inside a div.</p>
+        <p>This is another paragraph inside the same div.</p>
+    </div>
+    <h2>Another Title</h2>
+    <p>This paragraph is not inside any div.</p>
+</body>
+</html>
