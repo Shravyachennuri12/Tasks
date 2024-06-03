@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Objects</title>
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" >
+        <h1>Javascript</h1>
+    </div>
+
+    <script>
+        
+         //Object Literals
+         let person1 = {
+             name: "John",
+             age: 30,
+             city: "New York"
+           };
+
+          //Using the new Object()
+          let person2 = new Object();
+              person2.name = "David";
+              person2.age = 32;
+              person2.city = "London";
+
+          //Dot Notation
+            //Used to access properties of an object using a dot (.).
+            console.log(person1.name); 
+            console.log(person1.age); 
+
+          //Bracket Notation
+          //Used to access properties using brackets ([]). Useful when property names are dynamic or not valid identifiers.
+          console.log(person2["name"]); 
+          console.log(person2["age"]);  
+          
+          // Dynamic property access
+          let prop = "city";
+          console.log(person1[prop]); 
+
+
+    </script>
+    </body>
+    </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript String Methods</title>
+    <style>
+        .container {
+            text-align: center;
+        }
+        .results {
+            text-align: left;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript String Methods</h1>
+        <div class="results" id="results">
+            <p><strong>Length:</strong> <span id="lengthResult"></span></p>
+            <p><strong>toUpperCase():</strong> <span id="toUpperCaseResult"></span></p>
+            <p><strong>toLowerCase():</strong> <span id="toLowerCaseResult"></span></p>
+            <p><strong>charAt(0):</strong> <span id="charAtResult"></span></p>
+            <p><strong>indexOf('World'):</strong> <span id="indexOfResult"></span></p>
+        </div>
+    </div>
+
+    <script>
+        let str = "Hello, World!";
+        
+        document.getElementById("lengthResult").textContent = str.length;
+        document.getElementById("toUpperCaseResult").textContent = str.toUpperCase();
+        document.getElementById("toLowerCaseResult").textContent = str.toLowerCase();
+        document.getElementById("charAtResult").textContent = str.charAt(0);
+        document.getElementById("indexOfResult").textContent = str.indexOf("World");
+    </script>
+</body>
+</html>
