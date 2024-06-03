@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple HTML Manipulation with JavaScript</title>
+</head>
+<body>
+    <h1 id="heading">Original Heading</h1>
+    <p id="paragraph">This is a paragraph.</p>
+    <button id="myButton">Click Me!</button>
+
+    <script>
+        const heading = document.getElementById('heading');
+        const paragraph = document.getElementById('paragraph');
+        const button = document.getElementById('myButton');
+
+        // Function to handle button click
+        function handleClick() {
+            // Change the text content of the heading
+            heading.textContent = 'Updated Heading';
+            // Change the background color of the paragraph
+            paragraph.style.backgroundColor = 'lightblue';
+            // Change the text content of the paragraph
+            paragraph.textContent = 'The paragraph has been updated.';
+        }
+
+        // Add event listener to the button
+        button.addEventListener('click', handleClick);
+    </script>
+</body>
+</html>
