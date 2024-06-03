@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Timers</title>
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .content {
+            text-align: left;
+            margin: 0 auto;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Timers</h1>
+        <div class="content">
+            <h2>Difference Between <code>setTimeout</code> and <code>setInterval</code></h2>
+            <p><strong><code>setTimeout</code>:</strong></p>
+            <p>The <code>setTimeout</code> function is used to execute a function once after a specified delay in milliseconds.</p>
+            <p><strong>Syntax:</strong> <code>setTimeout(function, delay)</code></p>
+            
+
+            <p><strong><code>setInterval</code>:</strong></p>
+            <p>The <code>setInterval</code> function is used to repeatedly execute a function with a fixed time delay between each call.</p>
+            <p><strong>Syntax:</strong> <code>setInterval(function, interval)</code></p>
+            
+        </div>
+
+        <p>Wait for 3 seconds to see the message in the console and alert.</p>
+    </div>
+
+    <script>
+        setTimeout(function() {
+            console.log('This message appears after 3 seconds');
+            alert('This message appears after 3 seconds');
+        }, 3000);
+    </script>
+</body>
+</html>

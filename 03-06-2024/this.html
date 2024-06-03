@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+        .container{
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container" >
+        <h1>Javascript</h1>
+        <p>
+           <b>Role of the this Keyword in JavaScript:</b> <br>
+The this keyword in JavaScript refers to the context within which a function is executed.<br> It allows access to the object that is currently executing the function or to the object that the function is a method of.<br>
+</p>
+</div>
+
+<script>
+const person = {
+firstName: 'John',
+lastName: 'Doe',
+fullName: function() {
+    return this.firstName + ' ' + this.lastName;
+}
+};
+
+console.log(person.fullName());
+</script>
+</body>
+</html> 

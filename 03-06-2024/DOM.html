@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Project with Timers</title>
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .countdown {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+        }
+        .color-box {
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+            border: 2px solid black;
+            transition: background-color 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DOM Project with Timers</h1>
+        <div class="countdown" id="countdown">5</div>
+        <div class="color-box" id="color-box"></div>
+    </div>
+
+    <script>
+        // Countdown Timer
+        let countdownValue = 5;
+        const countdownElement = document.getElementById('countdown');
+        const countdownInterval = setInterval(() => {
+            countdownValue--;
+            countdownElement.textContent = countdownValue;
+            if (countdownValue === 0) {
+                clearInterval(countdownInterval);
+            }
+        }, 1000);
+
+        // Background Color Change
+        const colorBox = document.getElementById('color-box');
+        const colors = ['red', 'green', 'blue', 'yellow', 'purple'];
+        let colorIndex = 0;
+        setInterval(() => {
+            colorBox.style.backgroundColor = colors[colorIndex];
+            colorIndex = (colorIndex + 1) % colors.length;
+        }, 2000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread and Rest Operators</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Spread and Rest Operators</h1>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        // Concatenating two arrays using the spread operator
+        const array1 = [1, 2, 3];
+        const array2 = [4, 5, 6];
+        const combinedArray = [...array1, ...array2];
+
+        // Calculating the sum of numbers using the rest operator
+        function sum(...numbers) {
+            return numbers.reduce((total, num) => total + num, 0);
+        }
+
+        // Displaying results
+        const resultElement = document.getElementById('result');
+        resultElement.innerHTML = `
+            <p>Concatenated Array: ${combinedArray.join(', ')}</p>
+            <p>Sum of Numbers: ${sum(1, 2, 3, 4, 5)}</p>
+        `;
+    </script>
+</body>
+</html>

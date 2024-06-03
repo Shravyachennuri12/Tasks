@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Callback Function</title>
+    <style>
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Callback Function</h1>
+        <p>Open the console to see the example and explanation of callback functions.</p>
+    </div>
+
+    <script>
+        function executeCallback(callback) {
+            console.log('Executing the callback function...');
+            callback();
+        }
+
+        function myCallback() {
+            console.log('Callback function called!');
+        }
+
+        // Call the function and pass the callback
+        executeCallback(myCallback);
+
+        // Explanation of callback functions
+        console.log("A callback function in JavaScript is a function that is passed as an argument to another function and is executed after some kind of operation or event has occurred. Callback functions are a key aspect of asynchronous programming in JavaScript, allowing code to continue running while waiting for long-running operations, such as network requests or file I/O, to complete.\n\n" +
+                    "Key Concepts of Callback Functions\n" +
+                    "Higher-Order Functions:\n\n" +
+                    "Functions that accept other functions as arguments or return functions are known as higher-order functions. The function passed as an argument is the callback function.\n\n" +
+                    "Asynchronous Operations:\n\n" +
+                    "Callbacks are often used with asynchronous operations to handle results once the operations are complete. Common scenarios include event handling, network requests, and timers.\n\n" +
+                    "Execution Order:\n\n" +
+                    "The callback function is not executed immediately but is called once the operation completes or an event occurs.");
+    </script>
+</body>
+</html>
