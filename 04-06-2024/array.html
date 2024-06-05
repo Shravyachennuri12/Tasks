@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher-Order Array Methods</title>
+</head>
+<body>
+    <h1>Higher-Order Array Methods Example</h1>
+    <p>Open the console to see the results.</p>
+
+    <script>
+        //Array
+        const numbers = [1, 2, 3, 4, 5];
+
+        // Map: Double each number in the array
+        const doubledNumbers = numbers.map(num => num * 2);
+        console.log("Doubled numbers:", doubledNumbers); 
+
+        // Filter: Filter out even numbers
+        const oddNumbers = numbers.filter(num => num % 2 !== 0);
+        console.log("Odd numbers:", oddNumbers); 
+
+        // Reduce: Sum all numbers in the array
+        const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+        console.log("Sum of numbers:", sum); 
+    </script>
+
+</html>
