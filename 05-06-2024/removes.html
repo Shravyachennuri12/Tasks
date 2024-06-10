@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+        .container{
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container" >
+        <h1>Javascript</h1>
+    
+</div>
+<script>
+function modifyArray(array, newElement1, newElement2) {
+   
+    if (array.length < 2) {
+        throw new Error("Array must have at least two elements.");
+    }
+
+    // Use the `splice` method to remove the second element and insert two new elements
+    array.splice(1, 1, newElement1, newElement2);
+
+    
+    return array;
+}
+
+
+const myArray = [1, 2, 3, 4, 5];
+const newElement1 = 'a';
+const newElement2 = 'b';
+const modifiedArray = modifyArray(myArray, newElement1, newElement2);
+
+console.log(modifiedArray); 
+
+
+
+
+</script>
+</body>
+</html> 

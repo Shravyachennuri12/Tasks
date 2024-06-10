@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+        .container{
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container" >
+        <h1>Javascript</h1>
+    
+</div>
+<script>
+function sumAndMultiplication(arrayOfNumbers) {
+    let sum = 0;
+    let multiplication = 1;
+
+    
+    for (let number of arrayOfNumbers) {
+        
+        sum += number;
+        multiplication *= number;
+    }
+
+    return {
+        sum: sum,
+        multiplication: multiplication
+    };
+}
+
+
+const numbers = [1, 2, 3, 4, 5];
+const result = sumAndMultiplication(numbers);
+
+console.log(result); 
+
+
+</script>
+</body>
+</html> 
