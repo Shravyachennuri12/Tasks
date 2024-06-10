@@ -1,0 +1,89 @@
+<html lang="en">
+    <head>
+    </head>
+    <style>
+        
+        body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            .container {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+
+            input#userinput {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+
+            h2#counter {
+                font-size: 48px;
+                margin: 20px 0;
+                color: #333;
+            }
+            button {
+                padding: 10px 20px;
+                margin: 5px;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            button#add {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+            button#add:hover {
+                background-color: #45a049;
+            }
+
+            button#reset {
+                background-color: rgb(168, 128, 241);
+                color: white;
+            }
+            button#reset:hover {
+                background-color: rgb(148, 108, 221);
+            }
+
+            button#remove {
+                background-color: rgb(238, 99, 99);
+                color: white;
+            }
+
+            button#remove:hover {
+                background-color: rgb(218, 79, 79);
+            }
+
+        
+    </style>
+<body>
+      
+    <div class="container">
+        <input id="userinput" type="number" placeholder="Enter a Number">
+        <h2 id="counter">0</h2>
+        <button id="add">AddValue</button>
+        <button id="reset" >reset</button>
+        <button id="remove"> removeValue</button>
+
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
