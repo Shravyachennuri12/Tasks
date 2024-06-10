@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callback Hell Example</title>
+</head>
+<body>
+  <h1>Callback Hell Example</h1>
+  <button id="fetchDataButton">Fetch Data</button>
+  <div id="output"></div>
+
+  <script>
+    function fetchUser(callback) {
+      setTimeout(() => {
+        callback(null, { id: 1, name: "Shravya Chennuru" });
+      }, 1000);
+    }
+
+    function fetchOrders(userId, callback) {
+      setTimeout(() => {
+        callback(null, ["Order1", "Order2"]);
+      }, 1000);
+    }
+
+    document.getElementById("fetchDataButton").addEventListener("click", () => {
+      document.getElementById("output").textContent = "Fetching data...";
+
+      fetchUser((err, user) => {
+        if (err) {
+          document.getElementById("output").textContent = "Error fetching user";
+          return;
+        }
+        fetchOrders(user.id, (err, orders) => {
+          if (err) {
+            document.getElementById("output").textContent = "Error fetching orders";
+            return;
+          }
+          document.getElementById("output").textContent = `User: ${user.name}, Orders: ${orders.join(", ")}`;
+        });
+      });
+    });
+  </script>
+</body>
+</html>
