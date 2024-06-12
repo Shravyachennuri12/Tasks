@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegan Nail Polishes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+        }
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .product-item {
+            width: 22%;
+            margin-bottom: 20px;
+            padding: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            text-align: center;
+        }
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-item h3 {
+            font-size: 1em;
+            margin: 10px 0;
+        }
+        .product-item .price {
+            font-weight: bold;
+            color: #E91E63;
+            margin: 5px 0;
+        }
+        .product-item .rating {
+            color: #FF9800;
+            margin: 5px 0;
+        }
+        .colors {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .color {
+            width: 20px;
+            height: 20px;
+            margin: 0 5px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Listing Nail Polishes</h1>
+            <p>Product type: Nail polish</p>
+            <p>Product tags: Vegan</p>
+        </div>
+        <div class="product-list" id="products"></div>
+    </div>
+    <script>
+        // Fetch data from the API
+        fetch("https://makeup-api.herokuapp.com/api/v1/products.json?product_tags=Vegan&product_type=nail_polish")
+            .then(response => response.json())
+            .then(products => {
+                const productContainer = document.getElementById('products');
+
+                products.forEach(product => {
+                    const productItem = document.createElement('div');
+                    productItem.className = 'product-item';
+
+                    const colors = product.product_colors.map(color => {
+                        return `<div class="color" data-image="${product.image_link}" style="background-color: ${color.hex_value}"></div>`;
+                    }).join('');
+
+                    productItem.innerHTML = `
+                        <img src="${product.image_link}" alt="${product.name}" class="product-image">
+                        <h3>${product.brand}<br>${product.name}</h3>
+                        <p class="price">$${product.price}</p>
+                        <p class="rating">Rating: ${product.rating || 'N/A'}</p>
+                        <div class="colors">${colors}</div>
+                    `;
+
+                    // Add event listeners to color swatches
+                    productItem.querySelectorAll('.color').forEach(colorElement => {
+                        colorElement.addEventListener('click', function() {
+                            const image = productItem.querySelector('.product-image');
+                            image.src = this.dataset.image;
+                        });
+                    });
+
+                    productContainer.appendChild(productItem);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    </script>
+</body>
+</html>
