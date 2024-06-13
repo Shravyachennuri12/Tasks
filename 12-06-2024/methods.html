@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call, Apply, Bind Example</title>
+</head>
+<body>
+    <h1>Call, Apply, Bind Example</h1>
+    <button id="callButton">Use call</button>
+    <button id="applyButton">Use apply</button>
+    <button id="bindButton">Use bind</button>
+
+    <script>
+        function greet(greeting, punctuation) {
+            console.log(greeting + ', ' + this.name + punctuation);
+        }
+
+        const person1 = {
+            name: 'Shravya'
+        };
+
+        const person2 = {
+            name: 'Sowmya'
+        };
+
+        document.getElementById('callButton').addEventListener('click', function() {
+            // Using call
+            greet.call(person1, 'Hello', '!'); 
+            greet.call(person2, 'Hi', '...'); 
+        });
+
+        document.getElementById('applyButton').addEventListener('click', function() {
+            // Using apply
+            greet.apply(person1, ['Good morning', '.']); 
+            greet.apply(person2, ['Hey there', '!']); 
+        });
+
+        document.getElementById('bindButton').addEventListener('click', function() {
+            // Using bind
+            const greetShravya = greet.bind(person1, 'Hi');
+            const greetSowmya = greet.bind(person2, 'Hello');
+
+            greetShravya('?'); 
+            greetSowmya('!'); 
+        });
+    </script>
+</body>
+</html>
