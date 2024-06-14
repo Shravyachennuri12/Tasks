@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript CRUD</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .input-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .input-container input {
+            width: 50%;
+            display: inline-block;
+        }
+        .input-container button {
+            margin-top: 10px;
+        }
+        .todos {
+            margin-top: 20px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .todo-item {
+            background-color: white;
+            border: 2px solid #007bff;
+            margin-top: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .todo-item h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #007bff;
+        }
+        .todo-item.completed h1 {
+            text-decoration: line-through;
+            color: grey;
+        }
+        .todo-item input {
+            margin-right: 10px;
+        }
+        .todo-item button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Local storage with todo</h1>
+    </div>
+
+    <div class="input-container">
+        <input class="form-control" type="text" placeholder="enter your todo...">
+        <button class="btn btn-primary">Add</button>
+    </div>
+
+    <div class="todos"></div>
+
+    <script>
+        const input = document.querySelector('.form-control');
+        const addTodobtn = document.querySelector('.btn');
+        const todosList = document.querySelector('.todos');
+
+        let allTodos = JSON.parse(localStorage.getItem('todos')) || [];
+
+        const showTodos = () => {
+            todosList.innerHTML = '';
+            allTodos.forEach((myTodo) => {
+                const { todo, isCompleted, id } = myTodo;
+                const html = `
+                    <div class="todo-item ${isCompleted ? 'completed' : ''}" data-id="${id}">
+                        <div>
+                            <input type="checkbox" ${isCompleted ? 'checked' : ''} />
+                            <h1>${todo}</h1>
+                        </div>
+                        <div>
+                            <button class="btn btn-warning">Update</button>
+                            <button class="btn btn-danger">Delete</button>
+                        </div>
+                    </div>
+                `;
+                todosList.innerHTML += html;
+            });
+
+            document.querySelectorAll('.btn-warning').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const todoDiv = e.target.parentElement.parentElement;
+                    const todoId = Number(todoDiv.getAttribute('data-id'));
+                    const newTodo = prompt("Update your todo:", todoDiv.querySelector('h1').innerText);
+                    if (newTodo) {
+                        allTodos = allTodos.map(todo => {
+                            if (todo.id === todoId) {
+                                return { ...todo, todo: newTodo };
+                            }
+                            return todo;
+                        });
+                        localStorage.setItem('todos', JSON.stringify(allTodos));
+                        showTodos();
+                    }
+                });
+            });
+
+            document.querySelectorAll('.btn-danger').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const todoDiv = e.target.parentElement.parentElement;
+                    const todoId = Number(todoDiv.getAttribute('data-id'));
+                    allTodos = allTodos.filter(todo => todo.id !== todoId);
+                    localStorage.setItem('todos', JSON.stringify(allTodos));
+                    showTodos();
+                });
+            });
+
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.addEventListener('change', (e) => {
+                    const todoDiv = e.target.parentElement.parentElement;
+                    const todoId = Number(todoDiv.getAttribute('data-id'));
+                    allTodos = allTodos.map(todo => {
+                        if (todo.id === todoId) {
+                            return { ...todo, isCompleted: e.target.checked };
+                        }
+                        return todo;
+                    });
+                    localStorage.setItem('todos', JSON.stringify(allTodos));
+                    showTodos();
+                });
+            });
+        };
+
+        addTodobtn.addEventListener('click', () => {
+            const userInput = input.value;
+            if (!userInput) {
+                return alert("Please enter the valid todo data...");
+            } else {
+                allTodos.push({
+                    todo: userInput,
+                    isCompleted: false,
+                    id: Date.now()
+                });
+
+                input.value = '';
+                localStorage.setItem('todos', JSON.stringify(allTodos));
+                showTodos();
+            }
+        });
+
+        window.onload = showTodos;
+    </script>
+</body>
+</html>
